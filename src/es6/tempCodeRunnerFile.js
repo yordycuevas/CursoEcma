@@ -1,8 +1,13 @@
-let person1 = {
-  name: "oscar",
-  age: 32,
-  country: "MX",
+function* helloWorld() {
+
+  if (true){
+    yield 'hello,' ;
+  }if (true){
+    yield 'world';
+  }
 };
 
-obj = {name, age};
-console.log(person1);
+const generadorHello = helloWorld();
+console.log(generadorHello.next().value);
+console.log(generadorHello.next().value);
+console.log(generadorHello.next().value);

@@ -67,7 +67,6 @@ console.log(globalVar);
 
 const a = "b";
 
-
 // procesos forma
 
 let person1 = {
@@ -76,42 +75,75 @@ let person1 = {
   country: "MX",
 };
 
-obj = {name, age};
+obj = { name, age };
 console.log(person1);
 
-// Arrow function
+//  Arrow function
 
 const names = [
-{ name: 'oscar', age:32},
-{ name: 'Yordy', age:30}
-
+  { name: "oscar", age: 32 },
+  { name: "Yordy", age: 30 },
 ];
 
-let listOfNames = names.map(function(item){
+let listOfNames = names.map(function (item) {
   console.log(item.name);
 });
 
-
 // v2
 
-let listOfNames2 = names.map(item => console.log(item.name));
-
+let listOfNames2 = names.map((item) => console.log(item.name));
 
 // promesas
 
 const helloPromise = () => {
-return new Promise((resolve, reject) => {
-  if (true){
-    resolve('Hey!');
-  }else{
-    reject('Ups !!');
-
-  }
-});
-
-}
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve("Hey!");
+    } else {
+      reject("Ups !!");
+    }
+  });
+};
 
 helloPromise()
-.then(response => console.log(response))
-.then(() => console.log('Hola'))
-.catch(error => console.log(error));
+  .then((response) => console.log(response))
+  .then(() => console.log("Hola"))
+  .catch((error) => console.log(error));
+
+// Cap 5
+
+class calculator {
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  sum(valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+
+const calc = new calculator();
+console.log(calc.sum(2, 2));
+
+// exportar funciones de
+/* import hello from "./module";
+console.log(hello());
+ */
+
+// generador
+
+function* helloWorld() {
+
+  if (true){
+    yield 'hello,' ;
+  }if (true){
+    yield 'world';
+  }
+};
+
+const generadorHello = helloWorld();
+console.log(generadorHello.next().value);
+console.log(generadorHello.next().value);
+console.log(generadorHello.next().value);
